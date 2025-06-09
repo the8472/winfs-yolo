@@ -9,7 +9,7 @@ use windows_sys::Win32::System::IO::DeviceIoControl;
 use windows_sys::Win32::Storage::FileSystem::{CreateFileA, FILE_SHARE_READ, FILE_SHARE_WRITE, OPEN_EXISTING};
 
 
-const IOCTL_DISK_GET_CACHE_SETTINGS: u32 = 0x7c0e0;
+const IOCTL_DISK_GET_CACHE_SETTINGS: u32 = 0x740e0;
 const IOCTL_DISK_SET_CACHE_SETTINGS: u32 = 0x7c0e4;
 
 #[repr(C)]
