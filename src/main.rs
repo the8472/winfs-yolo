@@ -21,7 +21,9 @@ struct DiskCacheSettings {
 
 fn main() {
     unsafe {
-        let hd1 = CString::new(r#"\\?\Device\Harddisk0\DR0"#).unwrap();
+        // r#"\\?\Device\Harddisk0\DR0"#
+        // PhysicalDisk0
+        let hd1 = CString::new(r#"\\.\PHYSICALDRIVE0"#).unwrap();
         let handle = CreateFileA(
             hd1.as_ptr().cast(),
             GENERIC_READ | GENERIC_WRITE,
