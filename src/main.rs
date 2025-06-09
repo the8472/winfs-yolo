@@ -33,7 +33,8 @@ fn main() {
         );
 
         if handle == INVALID_HANDLE_VALUE {
-            panic!("Failed to open device DR0");
+            let error_code = windows_sys::Win32::Foundation::GetLastError();
+            panic!("Failed to open device DR0, {:x}", error_code);
         }
 
         let mut settings: DiskCacheSettings = mem::zeroed();
