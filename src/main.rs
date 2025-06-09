@@ -3,7 +3,6 @@ use std::ffi::CString;
 use std::{mem, ptr};
 use std::ptr::{null, null_mut};
 
-use windows_sys::core::*;
 use windows_sys::Win32::Foundation::{GENERIC_READ, GENERIC_WRITE, INVALID_HANDLE_VALUE};
 use windows_sys::Win32::System::IO::DeviceIoControl;
 use windows_sys::Win32::Storage::FileSystem::{CreateFileA, FILE_SHARE_READ, FILE_SHARE_WRITE, OPEN_EXISTING};
@@ -31,7 +30,7 @@ fn main() {
             null(),
             OPEN_EXISTING,
             0,
-            null_mut()
+            0
         );
 
         if handle == INVALID_HANDLE_VALUE {
