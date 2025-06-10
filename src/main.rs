@@ -60,6 +60,8 @@ fn main() {
 
             // verify that it sticks
 
+            settings = mem::zeroed();
+
             let r = DeviceIoControl(handle, IOCTL_DISK_GET_CACHE_SETTINGS, null(), 0, ptr::from_mut(&mut settings).cast(), size_of::<DiskCacheSettings>() as u32, &mut lpbytesreturned, null_mut());
 
             if r == 0 {
