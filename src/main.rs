@@ -49,6 +49,8 @@ fn main() {
                 continue;
             }
 
+            eprintln!("Old value for drive {i}: is_power_protected = {}", settings.is_power_protected);
+
             // Enable YOLO mode
             settings.is_power_protected = 1;
 
